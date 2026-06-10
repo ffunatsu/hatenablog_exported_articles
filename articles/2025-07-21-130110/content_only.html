@@ -40,9 +40,9 @@
 </ul>
 
 <h2 id="日本語キー配列アナライザーのフォーク">日本語キー配列アナライザーのフォーク</h2>
-<p><a href="https://funatsufumiya.hatenablog.com/entry/2025/07/20/164420">前の記事</a>で<a href="https://github.com/funatsufumiya/jis_geta">JIS下駄</a>の入力効率を客観的に測るテストをしたとき、<a href="https://github.com/eswai/keyboard_analyzer">eswai/keyboard_analyzer</a>（日本語キー配列アナライザー）を使えばよかったという追記をした。</p>
+<p><a href="https://funatsufumiya.hatenablog.com/entry/2025/07/20/164420">前の記事</a>で<a href="https://github.com/ffunatsu/jis_geta">JIS下駄</a>の入力効率を客観的に測るテストをしたとき、<a href="https://github.com/eswai/keyboard_analyzer">eswai/keyboard_analyzer</a>（日本語キー配列アナライザー）を使えばよかったという追記をした。</p>
 <p>で、早速フォークして対応させてみた。</p>
-<p><iframe src="https://hatenablog-parts.com/embed?url=https%3A%2F%2Fgithub.com%2Ffunatsufumiya%2Fkeyboard_analyzer_jisgeta" title="GitHub - funatsufumiya/keyboard_analyzer_jisgeta: 日本語キー配列アナライザー（フォークしてJIS下駄を追加）" class="embed-card embed-webcard" scrolling="no" frameborder="0" style="display: block; width: 100%; height: 155px; max-width: 500px; margin: 10px 0px;" loading="lazy"></iframe><cite class="hatena-citation"><a href="https://github.com/funatsufumiya/keyboard_analyzer_jisgeta">github.com</a></cite></p>
+<p><iframe src="https://hatenablog-parts.com/embed?url=https%3A%2F%2Fgithub.com%2Ffunatsufumiya%2Fkeyboard_analyzer_jisgeta" title="GitHub - funatsufumiya/keyboard_analyzer_jisgeta: 日本語キー配列アナライザー（フォークしてJIS下駄を追加）" class="embed-card embed-webcard" scrolling="no" frameborder="0" style="display: block; width: 100%; height: 155px; max-width: 500px; margin: 10px 0px;" loading="lazy"></iframe><cite class="hatena-citation"><a href="https://github.com/ffunatsu/keyboard_analyzer_jisgeta">github.com</a></cite></p>
 <p>実際使うには、もちろん<a href="https://keyboard-analyzer.vercel.app/">元サイト</a>では「JIS下駄」を選ぶことはできないので、本来は手元で<code>git clone</code>して<code>npm install</code>して<code>npm run dev</code>するなどが必要だけど、以下に<strong>ブラウザだけで試せるサイト</strong>（<a class="keyword" href="https://d.hatena.ne.jp/keyword/GitHub">GitHub</a> Pages）を準備した。</p>
 <p><a href="https://ffunatsu.github.io/keyboard_analyzer_jisgeta_static/">https://ffunatsu.github.io/keyboard_analyzer_jisgeta_static/</a></p>
 <p>余談だけれど、「この日本語の文章ってこの配列ではどうやって打つんだろう？」って思ったときなんかに便利で、こういうツールに一つ一つ対応しておくと何かと便利なのかもしれない。</p>
@@ -111,7 +111,7 @@ vs&lt;k&gt;vsfcb&lt;k&gt;wb&lt;d&gt;0jn&lt;shift&gt;,c&lt;k&gt;qw&lt;shift&gt;,c
 <p><span itemscope itemtype="http://schema.org/Photograph"><img src="../../images/20250721121726.png" width="1200" height="890" loading="lazy" title="" class="hatena-fotolife" itemprop="image"></span></p>
 <h2 id="-計測2の分析">◆ 計測2の分析</h2>
 <p>まず、記号入力については、当初、新下駄配列由来の<a class="keyword" href="https://d.hatena.ne.jp/keyword/%A5%AD%A1%BC%A5%D0%A5%A4%A5%F3%A5%C9">キーバインド</a>を正しく正確に設定していたため、計測結果に偏りが出ていた。（FG = <code>「」左</code>などが反映されず、無理のある記号入力が採用される現象。）</p>
-<p>そこで、FG = <code>「」左</code> など、<strong>実際の<a class="keyword" href="https://d.hatena.ne.jp/keyword/%A5%B9%A5%C8%A5%ED%A1%BC%A5%AF">ストローク</a>が正しく打たれるように、定義を少しだけ工夫している</strong>。（詳しくは<a href="https://github.com/funatsufumiya/keyboard_analyzer_jisgeta">コード</a>を参照のこと。ただし、「？」や「！」などの句読点系はJIS由来のShiftを使ったキー<a class="keyword" href="https://d.hatena.ne.jp/keyword/%A5%B9%A5%C8%A5%ED%A1%BC%A5%AF">ストローク</a>を優先している。）</p>
+<p>そこで、FG = <code>「」左</code> など、<strong>実際の<a class="keyword" href="https://d.hatena.ne.jp/keyword/%A5%B9%A5%C8%A5%ED%A1%BC%A5%AF">ストローク</a>が正しく打たれるように、定義を少しだけ工夫している</strong>。（詳しくは<a href="https://github.com/ffunatsu/keyboard_analyzer_jisgeta">コード</a>を参照のこと。ただし、「？」や「！」などの句読点系はJIS由来のShiftを使ったキー<a class="keyword" href="https://d.hatena.ne.jp/keyword/%A5%B9%A5%C8%A5%ED%A1%BC%A5%AF">ストローク</a>を優先している。）</p>
 <p>全体傾向としては計測1と変わっていないのだけれど、<strong>「あ/ま/わ」の出現率の高さから、最上段は意外とよく利用される</strong>ということがよくわかる。</p>
 <p>これは実際にJIS下駄配列やJISかな配列を打っているときの体感と一致していて、JIS配列の好みが分かれるところになると思う。自分は「あ/ま/わ」については打ちにくさを感じないので、大きな問題ではないと思うけれど、例えば「ほ」や「へ」なども含めたとき、手の大きさなど人によって好みが分かれるポイントのはず。</p>
 <p>あくまで自分の印象では、「あ/ま/わ」は良いとしても「え/お/や」は自分は入力しづらいなと感じていて、ヒートマップで見るとそれほど多い頻度ではない気はしつつ、<strong>「お」の出現率は比較的高いので、たぶんここで好みが分かれてくる</strong>。</p>
@@ -149,7 +149,7 @@ vs&lt;k&gt;vsfcb&lt;k&gt;wb&lt;d&gt;0jn&lt;shift&gt;,c&lt;k&gt;qw&lt;shift&gt;,c
 <p>今回気になった結果としては、「<strong>同じ指で連続して違うキーを打鍵した数</strong>」が、左人差し指が非常に多いという結果になっている。これはおそらく、「かっ」といった<strong>特定の語が多かったことが影響</strong>していると思われる。実は計測2でも右人差し指で同様の傾向が見られていて、この辺も打鍵の辛さとか好みに影響がありそうなファクターかもしれない。</p>
 <p>あと今回「ふ」と「ほ」の出現頻度が高かったようで、それによって<strong>最上段の利用頻度が他の計測よりも高くなっている</strong>。個人的には計測2の分析でも述べたように「え/お/や」ほど打ちにくいと感じないのでさほど気にならないけれど、人によっては最上段の利用頻度が多いのは好ましくないのかもしれない。</p>
 <p>ちなみに自分が最上段に慣れているのは、普段からプログラミング等で記号入力が多いこととかなり相関がある。また、自分は人よりも結構手が大きいので、こうした様々なコンテキストが、JISかななどの利用には影響があると思われる。</p>
-<p>自分はこれらの要因によって、他の配列であるような各種シフトを使った同時押しをするくらいなら、手を伸ばして単打になっていた方が嬉しいなと思う方なのもあって、今回の<a href="https://github.com/funatsufumiya/jis_geta">JIS下駄配列</a>の考案に至ったのだけれど、JISかなと同じように、キーボード全体を使う傾向にあることは今回のヒートマップの分析でも明らかになったように思う。</p>
+<p>自分はこれらの要因によって、他の配列であるような各種シフトを使った同時押しをするくらいなら、手を伸ばして単打になっていた方が嬉しいなと思う方なのもあって、今回の<a href="https://github.com/ffunatsu/jis_geta">JIS下駄配列</a>の考案に至ったのだけれど、JISかなと同じように、キーボード全体を使う傾向にあることは今回のヒートマップの分析でも明らかになったように思う。</p>
 <div align="center">◆・◆・◆</div>
 
 <div align="center">◆・◆・◆</div>

@@ -1,4 +1,4 @@
-<p><a href="https://github.com/funatsufumiya/jis_geta">JIS下駄配列</a>を作ってみたはいいものの、客観的指標がなければ良い配列なのかどうかもよくわからない。</p>
+<p><a href="https://github.com/ffunatsu/jis_geta">JIS下駄配列</a>を作ってみたはいいものの、客観的指標がなければ良い配列なのかどうかもよくわからない。</p>
 <p>【追記】後から思い出したけど、<a href="https://github.com/eswai/keyboard_analyzer">eswai/keyboard_analyzer</a>を使えばよかったかもしれない。この存在がどうしても思い出せなくて、この記事では以下に記載の方法をとったが、またこれを使った方法もいつか試してみたい。（★ → <a href="https://funatsufumiya.hatenablog.com/entry/2025/07/21/130110">次記事</a>で実際にやってみました。）</p>
 <h2 id="目次">目次</h2>
 <ul class="table-of-contents">
@@ -21,7 +21,7 @@
     <li><a href="#分析考察">分析・考察</a></li>
 </ul>
 <h2 id="測定方法">測定方法</h2>
-<p>自分が人間逆変換器になって、入力された日本語をJIS配列上のアルファベットに直し（例えば<a class="keyword" href="https://d.hatena.ne.jp/keyword/QWERTY">QWERTY</a>の場合、「おはよう」→「ohayou」）、<a href="https://patorjk.com/keyboard-layout-analyzer">Keyboard Layout Analyzer</a>に定義した<a href="https://gist.github.com/funatsufumiya/8562dcbb8d468812dfe4febab87f8fe8">JIS配列のアルファベットキーボード</a>での<strong>スコア</strong>と<strong>ヒートマップ</strong>を確認してみることにする。</p>
+<p>自分が人間逆変換器になって、入力された日本語をJIS配列上のアルファベットに直し（例えば<a class="keyword" href="https://d.hatena.ne.jp/keyword/QWERTY">QWERTY</a>の場合、「おはよう」→「ohayou」）、<a href="https://patorjk.com/keyboard-layout-analyzer">Keyboard Layout Analyzer</a>に定義した<a href="https://gist.github.com/ffunatsu/8562dcbb8d468812dfe4febab87f8fe8">JIS配列のアルファベットキーボード</a>での<strong>スコア</strong>と<strong>ヒートマップ</strong>を確認してみることにする。</p>
 <p>また、参考として<strong>単打率</strong>も計算する。単打の基準は1モーラが単打で打てているかどうかとし、「きょ」などの拗音も今回は1モーラとしてカウントする。（例えば "a" や "4" などを純粋な単打とし、"&lt;" などShiftが要るもの、"di" などの複数同時打鍵は単打としない。）</p>
 <p>人力変換を使った実験なので、短い文章しか測定できないのはあしからず。</p>
 <p>ちなみに表示されたアルファベットを実際にJISの<a class="keyword" href="https://d.hatena.ne.jp/keyword/QWERTY">QWERTY</a>で打ってみれば、なんとなく難しさと偏りは体感できるかもしれない。</p>
