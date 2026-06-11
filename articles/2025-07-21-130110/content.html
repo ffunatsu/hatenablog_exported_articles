@@ -47,12 +47,12 @@
 <h2 id="日本語キー配列アナライザーのフォーク">日本語キー配列アナライザーのフォーク</h2>
 <p><a href="https://funatsufumiya.hatenablog.com/entry/2025/07/20/164420">前の記事</a>で<a href="https://github.com/ffunatsu/jis_geta">JIS下駄</a>の入力効率を客観的に測るテストをしたとき、<a href="https://github.com/eswai/keyboard_analyzer">eswai/keyboard_analyzer</a>（日本語キー配列アナライザー）を使えばよかったという追記をした。</p>
 <p>で、早速フォークして対応させてみた。</p>
-<p><iframe src="https://hatenablog-parts.com/embed?url=https%3A%2F%2Fgithub.com%2Ffunatsufumiya%2Fkeyboard_analyzer_jisgeta" title="GitHub - funatsufumiya/keyboard_analyzer_jisgeta: 日本語キー配列アナライザー（フォークしてJIS下駄を追加）" class="embed-card embed-webcard" scrolling="no" frameborder="0" style="display: block; width: 100%; height: 155px; max-width: 500px; margin: 10px 0px;" loading="lazy"></iframe><cite class="hatena-citation"><a href="https://github.com/ffunatsu/keyboard_analyzer_jisgeta">github.com</a></cite></p>
+<p><iframe src="https://hatenablog-parts.com/embed?url=https%3A%2F%2Fgithub.com%2Ffffunatsu%2Fkeyboard_analyzer_jisgeta_yazgi" title="GitHub - funatsufumiya/keyboard_analyzer_jisgeta: 日本語キー配列アナライザー（フォークしてJIS下駄を追加）" class="embed-card embed-webcard" scrolling="no" frameborder="0" style="display: block; width: 100%; height: 155px; max-width: 500px; margin: 10px 0px;" loading="lazy"></iframe><cite class="hatena-citation"><a href="https://github.com/ffunatsu/keyboard_analyzer_jisgeta">github.com</a></cite></p>
 <p>実際使うには、もちろん<a href="https://keyboard-analyzer.vercel.app/">元サイト</a>では「JIS下駄」を選ぶことはできないので、本来は手元で<code>git clone</code>して<code>npm install</code>して<code>npm run dev</code>するなどが必要だけど、以下に<strong>ブラウザだけで試せるサイト</strong>（<a class="keyword" href="https://d.hatena.ne.jp/keyword/GitHub">GitHub</a> Pages）を準備した。</p>
-<p><a href="https://funatsufumiya.github.io/keyboard_analyzer_jisgeta_static/">https://funatsufumiya.github.io/keyboard_analyzer_jisgeta_static/</a></p>
+<p><a href="https://funatsufumiya.github.io/keyboard_analyzer_jisgeta_yazgi_static/">https://funatsufumiya.github.io/keyboard_analyzer_jisgeta_yazgi_static/</a></p>
 <p>余談だけれど、「この日本語の文章ってこの配列ではどうやって打つんだろう？」って思ったときなんかに便利で、こういうツールに一つ一つ対応しておくと何かと便利なのかもしれない。</p>
 <h2 id="分析方法">分析方法</h2>
-<p><a href="https://github.com/ffunatsu/keyboard_analyzer_jisgeta">今回のツール</a>は、いわゆる「<a href="https://patorjk.com/keyboard-layout-analyzer/">Keyboard Layout Analyzer</a>」のように「スコア」みたいなわかりやすい指標を出してくれるわけではなくて、数々の客観指標の中から自分で分析させるスタイルをとっている。</p>
+<p><a href="https://github.com/ffunatsu/keyboard_analyzer_jisgeta_yazgi">今回のツール</a>は、いわゆる「<a href="https://patorjk.com/keyboard-layout-analyzer/">Keyboard Layout Analyzer</a>」のように「スコア」みたいなわかりやすい指標を出してくれるわけではなくて、数々の客観指標の中から自分で分析させるスタイルをとっている。</p>
 <p>よって、とりあえずすごく長い文章から出る傾向を比較して、都度それらを比較して分析してみようと思う。</p>
 <p>※ なお、キー打鍵列については、そのまま掲載するとなぜか "<a class="keyword" href="https://d.hatena.ne.jp/keyword/%A4%CF%A4%C6%A4%CA%B5%AD%CB%A1">はてな記法</a>" により一部省略されてしまうので、作為的に改行した。</p>
 <p>※ 記号定義について、新下駄配列由来の特殊なバインド（FG = <code>「」左</code> など）が正しく計測されないという問題をはらんでいるため、各分析で都度言及するが、少し工夫をしている。</p>
