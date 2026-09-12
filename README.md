@@ -6,7 +6,7 @@ https://ffunatsu.github.io/hatenablog_exported_articles/index.html (GitHub Pages
 
 ## License
 
-- Files under [`/scripts`](./scripts): MIT License (c) 2025 Fumiya Funatsu
+- Files under [`/scripts`](./scripts): MIT License (c) 2025-2026 Fumiya Funatsu
 - Others: Currently **unspecified** (under consideration.)
   - Please use them under the GitHub's terms of use.
  
